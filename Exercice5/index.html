@@ -1,23 +1,38 @@
 <!DOCTYPE html>
-<html>
+<html lang="fr">
 <head>
-    <title>Page sans Accessibilité</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Titre de la Page</title>
 </head>
 <body>
-<h1>Titre de la Page</h1>
-<p>Ceci est un paragraphe de texte.</p>
+    <header>
+        <h1>Titre de la Page</h1>
+    </header>
 
-<!-- Formulaire sans étiquette pour les champs -->
-<form>
-    <input id="name" type="text" placeholder="Entrez votre nom">
-    <input id="email" type="email" placeholder="Entrez votre adresse e-mail">
-    <button type="submit">Envoyer</button>
-</form>
+    <main>
+        <p>Ceci est un paragraphe de texte.</p>
 
-<!-- Image sans attribut alt -->
-<img src="assets/image.png" height=250>
+        <form>
+            <div>
+                <label for="name">Nom :</label>
+                <input id="name" type="text" name="name" placeholder="Entrez votre nom" required aria-required="true">
+            </div>
+            <div>
+                <label for="email">Adresse e-mail :</label>
+                <input id="email" type="email" name="email" placeholder="Entrez votre adresse e-mail" required aria-required="true">
+            </div>
+            <button type="submit">Envoyer le formulaire</button>
+        </form>
 
-<!-- Lien sans texte descriptif -->
-<a href="#">Cliquez ici</a>
+        <figure>
+            <img src="assets/image.png" alt="Description de l'image" height="250">
+            <figcaption>Légende de l'image</figcaption>
+        </figure>
+
+        <nav>
+            <a href="#" aria-label="Plus d'informations, cliquez ici" title="Obtenir plus d'informations">Cliquez ici</a>
+        </nav>
+    </main>
 </body>
 </html>

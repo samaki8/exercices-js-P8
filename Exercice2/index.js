@@ -1,11 +1,30 @@
 // Créez votre fonction ici
+export default function calculate(x, y, operator) {
+    // Convertir x et y en nombres
+    const numX = Number(x);
+    const numY = Number(y);
 
-// Exemples d'utilisation de la fonction
-console.log(calculate(5, 3, '+'));   // Affiche 8
-console.log(calculate(10, 4, '-'));  // Affiche 6
-console.log(calculate(7, 2, '*'));   // Affiche 14
-console.log(calculate(12, 3, '/'));  // Affiche 4
-console.log(calculate(8, 0, '/'));   // Affiche "Division by zero is not allowed"
-console.log(calculate(4, 5, '%'));   // Affiche "Invalid operator"
+    // Vérifier si la conversion a réussi
+    if (isNaN(numX) || isNaN(numY)) {
+        return "Invalid input";
+    }
 
-export default calculate
+    switch (operator) {
+        case '+':
+            return numX + numY;
+        case '-':
+            return numX - numY;
+        case '*':
+            return numX * numY;
+        case '/':
+            if (numY === 0) {
+                return "Division by zero is not allowed";
+            }
+            if (numX < numY) {
+                return "Invalid operator";
+            }
+            return numX / numY;
+        default:
+            return "Invalid operator";
+    }
+}
